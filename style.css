@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+body{
+    background-color: #f5f4f4;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    font-family: "Lora", serif;
+    display: flex;
+    align-items: center;
+}
+@supports(display: grid) {
+    .message{
+       display: none; 
+    }
+    .section{
+       display: block;
+    }
+}
+h1{
+    margin: 0 0 1.5em;
+    font-size: 2rem;
+}
+.grid{
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 150px;
+    grid-auto-flow: row dense;
+}
+.item–medium{
+    grid-row-end: span 2;
+}
+.item–large{
+    grid-row-end: span 3;
+}
+.item–full{
+    grid-column-end: auto;
+}
+.item{
+display: flex;
+position: relative;
+background-color: #0c9a9a;
+grid-column-start: auto;
+grid-row-start: auto;
+color: #fff;
+flex-direction: column;
+justify-content: flex-end;
+background: url("https://i.ytimg.com/vi/X-St7ZkwU-I/maxresdefault.jpg");
+background-size: cover;
+background-position: center;
+transition: transform 0.3s ease-in-out;
+box-shadow: -2px 2px 10px 0px rgba(68, 68, 68, 0.4);
+}
+.item:nth-of-type(1n){
+    background-image: url("https://habrastorage.org/webt/mj/2m/pc/mj2mpclzeric84dwrap4c5fpkqm.jpeg");
+}
+.item:nth-of-type(2n){
+    background-image: url("https://avatars.mds.yandex.net/i?id=026cb8b646bcffc747894aff7916ec43_l-9237918-images-thumbs&n=13");
+}
+.item:nth-of-type(3n){
+    background-image: url("https://avatars.mds.yandex.net/i?id=a6d405bace76b33f78662e12bccbc004_l-5317467-images-thumbs&n=13");
+}
+.item:nth-of-type(4n){
+    background-image: url("https://i.pinimg.com/originals/9a/75/80/9a7580f41ad43e024112aa7cdca956c3.jpg");
+}
+.item:nth-of-type(5n){
+    background-image: url("https://i.pinimg.com/originals/77/3e/8f/773e8fc984631960959bdc3fbb213bd0.jpg");
+}
+.item:nth-of-type(6n){
+    background-image: url("https://www.zastavki.com/pictures/originals/2021Food___Cakes_and_Sweet_Berry_dessert_with_pie_pieces_150639_.jpg");
+}
+.item:nth-of-type(7n){
+    background-image: url("https://cdn1.ozone.ru/s3/multimedia-y/6265358770.jpg");
+}
+.item:nth-of-type(8n){
+    background-image: url("https://cdn.culture.ru/images/af07ca22-91e0-5d12-bc50-2db73c405589");
+}
+.item:nth-of-type(9n){
+    background-image: url("https://cdn.culture.ru/images/6a7acbaf-9f0e-50ab-95b8-5283a20ebb94");
+}
+.item:nth-of-type(10n){
+    background-image: url("https://img.goodfon.ru/original/2560x1600/a/bb/tort-morozhenoe-krem-eda.jpg");
+}
+.item:nth-of-type(11n){
+    background-image: url("https://avatars.mds.yandex.net/get-mpic/4725270/img_id3673583281054246996.jpeg/orig");
+}
+.item:nth-of-type(12n){
+    background-image: url("https://sun6-21.userapi.com/impf/c841539/v841539531/50e61/bOl1DJKTbEM.jpg?size=807x538&quality=96&sign=008d021a28ec81ceab7fbcb17b5d6f65&c_uniq_tag=9QoO38V_WUpzUZIlCnOUgx7zjPj7VRmZbUOoHssLOlQ&type=album");
+}
+.item:nth-of-type(13n){
+    background-image: url("https://i.pinimg.com/736x/9c/6d/dd/9c6ddda6cf9dc458d45cdbc384d5e131.jpg");
+}
+.item:nth-of-type(14n){
+    background-image: url("https://i.pinimg.com/originals/4b/7c/0e/4b7c0e34ab05d5bed97400f3ab0ca1ba.jpg");
+}
+.item:nth-of-type(15n){
+    background-image: url("https://www.zastavki.com/pictures/originals/2017Food___Cakes_and_Sweet_Appetizing_cakes_with_chocolate_and_strawberries_116285_.jpg");
+}
+.item::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transition: opacity 0.3s ease-in-out;
+    position: absolute;
+    opacity: 0.3;
+}
+.item:hover::after{
+    opacity: 0;
+}
+.item__details::before{
+    color:#444;
+    content: "";
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding-right: 0.5em;
+}
+.item:hover{
+    transform: scale(1.05);
+}
+.item__details{
+    color: #444;
+    background-color: #fff;
+    padding: 15px;
+    position: relative;
+    z-index: 1;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+}
+@media screen and (min-width:768px) {
+    .section{
+        padding: 4rem;
+    }
+    .item–full{
+        grid-column: 1/-1;
+        grid-row-end: span 2;
+    }
+    body, html{
+        display: block;
+    }
+}
